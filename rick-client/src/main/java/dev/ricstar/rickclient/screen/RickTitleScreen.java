@@ -30,11 +30,11 @@ public class RickTitleScreen extends Screen {
         int y = this.height / 2 - 6;
 
         this.addRenderableWidget(Button.builder(Component.translatable("menu.singleplayer"),
-                b -> this.minecraft.setScreen(new SelectWorldScreen(this))).bounds(x, y, w, h).build());
+                b -> this.minecraft.gui.setScreen(new SelectWorldScreen(this))).bounds(x, y, w, h).build());
         this.addRenderableWidget(Button.builder(Component.translatable("menu.multiplayer"),
-                b -> this.minecraft.setScreen(new JoinMultiplayerScreen(this))).bounds(x, y + 26, w, h).build());
+                b -> this.minecraft.gui.setScreen(new JoinMultiplayerScreen(this))).bounds(x, y + 26, w, h).build());
         this.addRenderableWidget(Button.builder(Component.translatable("menu.options"),
-                b -> this.minecraft.setScreen(new OptionsScreen(this, this.minecraft.options)))
+                b -> this.minecraft.gui.setScreen(new OptionsScreen(this, this.minecraft.options, false)))
                 .bounds(x, y + 52, 98, h).build());
         this.addRenderableWidget(Button.builder(Component.translatable("menu.quit"),
                 b -> this.minecraft.stop()).bounds(x + 102, y + 52, 98, h).build());
