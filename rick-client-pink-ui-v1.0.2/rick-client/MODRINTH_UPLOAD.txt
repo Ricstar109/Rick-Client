@@ -1,0 +1,8 @@
+Project: Rick Client
+Version: 1.0.2
+Minecraft: 26.2
+Loader: Fabric
+Environment: Client-side only
+
+Description:
+A pink, customizable menu and UI-screen project. Includes a ClickGUI-inspired menu, sidebar pages, and an accent color selector. No gameplay modules, world effects, combat, movement, or HUD changes.
