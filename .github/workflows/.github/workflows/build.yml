@@ -3,17 +3,19 @@ name: Build Rick Client
 
 on:
   push:
-    branches:
-      - main
-      - master
+    branches: [main, master]
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: ./rick-client
+
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Java 25
@@ -27,14 +29,12 @@ jobs:
         with:
           gradle-version: '9.2.1'
 
-      - name: Build Minecraft Mod
+      - name: Build Mod
         run: gradle build
 
       - name: Upload JAR
         uses: actions/upload-artifact@v4
         with:
           name: Rick-Client-JAR
-          path: |
-            build/libs/*.jar
-            !build/libs/*-sources.jar
+          path: rick-client/build/libs/*.jar
           if-no-files-found: error
