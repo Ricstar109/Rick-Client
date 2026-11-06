@@ -1,0 +1,7 @@
+{
+  "required": true,
+  "package": "dev.ricstar.rickclient.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "client": ["MinecraftMixin", "ItemInHandRendererMixin"],
+  "injectors": { "defaultRequire": 0 }
+}
